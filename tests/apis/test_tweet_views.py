@@ -16,7 +16,7 @@ class TestTweetViews(TestCase):
         db.session.remove()
         db.drop_all()
         
-        def test_tweet_show(self):
+    def test_tweet_show(self):
         first_tweet = Tweet(text="First tweet")
         db.session.add(first_tweet)
         db.session.commit()

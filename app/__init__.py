@@ -9,11 +9,7 @@ def create_app():
     from config import Config
     app.config.from_object(Config)
     db.init_app(app)
-    migrate = Migrate(app, db)
-    @app.route('/hello')
-    def hello():
-        return "Goodbye World!"
-
+    migrate = Migrate(app, db)    
     from .apis.tweets import api as tweets
     api = Api()
     api.add_namespace(tweets)
